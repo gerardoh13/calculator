@@ -87,6 +87,12 @@ class Calculator extends React.Component {
             return
         }
         if (operator !== '' && Number.isInteger(parseFloat(currentVal))){
+            if (currentVal === '0'){
+                this.setState({
+                    operator: op
+                })
+                return
+            }
             this.setState({
                 firstVal: this.answerSwitch(),
                 currentVal: '0',
